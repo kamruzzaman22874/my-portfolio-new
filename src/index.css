@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  @apply font-Poppins scroll-smooth
+}
+
+body{
+  @apply box-border bg-gray-900 text-gray-100
+}
+.btn-primary{
+  @apply bg-cyan-600 font-semibold text-white md:mx-0 mx-auto rounded-full px-6 py-3 flex items-center gap-2; 
+}
+.aboutImg::after {
+  @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-600 -z-10;
+}
+
+input,
+textarea {
+  @apply bg-gray-700 outline-none rounded-lg p-3;
+}
+
+::placeholder {
+  @apply text-lg;
+}
+
+::selection {
+  @apply bg-cyan-600;
+}
+
+.img{
+  overflow: hidden;
+}
+
+.profile-img{
+  position: relative;
+  width: 350px;
+  height: 400px;
+  background: rgba(0,0,0,0.75);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+}
+.profile-img::after{
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(transparent, transparent, transparent, purple);
+  animation: animate 2s linear infinite;
+  animation-delay: -2s;
+}
+.profile-img::before{
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 500px;
+  background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.img-border{
+  position: absolute;
+  inset: 5px;
+  border-radius: 20px;
+  background: #0c1022;
+  z-index: 2;
+}
